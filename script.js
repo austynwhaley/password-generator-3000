@@ -1,44 +1,82 @@
-// user inputs
+// user input variables
 
-//var passwordLength = prompt("How many characters in your password?(8-128)")
+function generatePassword(){
+  var passwordLength = prompt("How many characters in your password?(8-128)")
 
-//var passwordUppercase = confirm("Would you like uppercase letters?")
+  if (passwordLength < 8 || passwordLength > 128){
+    alert("Length must be 8-128 characters")
+    
+    generatePassword()
+  }
 
-//var passwordLowercase = confirm("would you like lowercase letters?")
+  if (passwordLength >= 8 && passwordLength <= 128){
+    var passwordUppercase = confirm("Would you like uppercase letters?")
+    var passwordLowercase = confirm("Would you like lowercase letters?")
+    var passwordNumbers = confirm("Would you like numbers?")
+    var passwordSymbols = confirm("Would you like symbols?")
+  }
 
-//var passwordNumbers = confirm("Would you like numbers?")
+  if (passwordUppercase != true && passwordLowercase != true && passwordNumbers != true && passwordSymbols != true){
+    alert("You must select at least one character type!")
+  }
+}
 
-//var passwordSymbols = confirm("Would you like symbols?")
+//DOM element
+
+var resultEl = document.getElementById("result");
 
 
 
-
-
-// generator functions
+var randomFunction = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
 
 function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s","t", "u", "v", "w", "x", "y", "z"]
+  return lower[Math.floor(Math.random() * lower.length)];
 }
 
 function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+ var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T", "U", "V", "W", "X", "Y", "Z"]
+  return upper[Math.floor(Math.random() * upper.length)];
 }
 
 function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+  return numbers[Math.floor(Math.random() * numbers.length)];
 }
 
 function getRandomSymbol() {
-  const symbols = ["!", "”", "#", "$", "%", "&", "’", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">" , "?", "@", "[", "^", "_", "{", "|", "}", "~",];
+  var symbols = ["!", "”", "#", "$", "%", "&", "’", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">" , "?", "@", "[", "^", "_", "{", "|", "}", "~",];
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
 
-console.log(getRandomLower());
 
-console.log(getRandomUpper());
 
-console.log(getRandomNumber());
+// Assignment Code
+// var generateBtn = document.querySelector("#generate");
 
-console.log(getRandomSymbol());
+// Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+  
+//   var generatedPassword
+//   passwordText.value = password;
 
+// }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", generatePassword);
+
+
+
+
+// make an array of characters for uppercase, lowercase, and special characters to use for the generator
+// once user clicks,then prompt the user for specific criteria and use that criteria fpr the generator
+// prompt them for the length of password between 8-128 characters 
+// once all prompts are complete then display the results in an alert of on the page
