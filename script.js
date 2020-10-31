@@ -3,9 +3,10 @@ var resultEl = document.querySelector("#password");
 var generateButton = document.querySelector("#generate");
 
 
-
+//'generate password' button
 generateButton.addEventListener("click", generatePassword);
 
+//generate password function
 function generatePassword() {
 
     var lower = ["abcdefghijklmnopqrstuvwxyz"]
@@ -25,7 +26,7 @@ function generatePassword() {
         alert("Please enter a number between 8 and 128!");
         return;
     } 
-    //pick characters from arrays
+    //user input for password content
     var lowercaseCharacters = confirm("Would you like lowercase letters?");
 
     if (lowercaseCharacters) {
@@ -65,3 +66,8 @@ function generatePassword() {
         resultEl.textContent = generatedPasswordStr;
     };
 };
+
+// make an array of characters for uppercase, lowercase, and special characters to use for the generator
+// once user clicks,then prompt the user for specific criteria and use that criteria fpr the generator
+// prompt them for the length of password between 8-128 characters 
+// once all prompts are complete then display the results in an alert or on the page
