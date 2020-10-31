@@ -3,7 +3,7 @@
 ### Table of Contents
 
 - [Description](#description)
-- [Link to Application]()
+- [Link to Application](https://austynwhaley.github.io/password-generator-3000/)
 - [License](#license)
 
 ---
@@ -16,7 +16,7 @@
 
 ## Description
 
-This homework was espically humbling this week but still resourceful, at first I had kept geting frustrated with my longer and more clutter filled way of arranging my arrays to use the returning boolean values with the concat() method to put them together, but by doing a little google magic I found a better way to get these values and assinging them to one string and using the setItem method we just learned to implement the string and set the generated password into the passwordText. 
+This homework was espically humbling this week but still resourceful, at first I had kept geting frustrated with my longer and more clutter filled way of arranging my arrays to use the returning boolean values with the concat() method to put them together, but by doing A LOT of serching I found some better ways to get these values, and to assign them to one string instead and using the setItem method we just learned to implement the string and set the generated password into the passwordText. 
 
 ---
 
